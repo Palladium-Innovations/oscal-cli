@@ -3,13 +3,13 @@ Version:        1.0.3
 Release:        1%{?dist}
 Summary:        Command-line utility for processing OSCAL documents
 
-License:        CC0
+License:        Apache-2.0
 URL:            https://github.com/usnistgov/oscal-cli
 Source0:        %{name}.tar.gz
 
 BuildArch:      noarch
-BuildRequires:  maven
 BuildRequires:  java-11-openjdk-devel
+BuildRequires:  maven
 
 Requires:       java-11-openjdk
 
@@ -40,5 +40,5 @@ ln -s /opt/%{name}/bin/oscal-cli %{buildroot}/usr/bin/oscal-cli
 /usr/bin/oscal-cli
 
 %changelog
-* Tue May 14 2025 Erik Cass <erik@go-palladium.com> - 1.0.3-1
+* Mon May 12 2025 Erik Cass <erik@go-palladium.com> - 1.0.3-1
 - Initial RPM packaging of OSCAL CLI
