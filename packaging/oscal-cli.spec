@@ -33,9 +33,16 @@ cp -r target/cli-core-%{version}-oscal-cli/* %{buildroot}/opt/%{name}/
 mkdir -p %{buildroot}/usr/bin
 ln -s /opt/%{name}/bin/oscal-cli %{buildroot}/usr/bin/oscal-cli
 
+# Copy license and doc files
+mkdir -p %{buildroot}%{_licensedir}/%{name}
+cp LICENSE.md %{buildroot}%{_licensedir}/%{name}
+
+mkdir -p %{buildroot}%{_docdir}/%{name}
+cp README.md %{buildroot}%{_docdir}/%{name}
+
 %files
-%license LICENSE
-%doc README.md
+%license %{_licensedir}/%{name}/LICENSE.md
+%doc %{_docdir}/%{name}/README.md
 /opt/%{name}
 /usr/bin/oscal-cli
 
