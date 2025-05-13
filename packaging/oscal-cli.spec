@@ -8,10 +8,10 @@ URL:            https://github.com/usnistgov/oscal-cli
 Source0:        %{name}.tar.gz
 
 BuildArch:      noarch
-BuildRequires:  java-11-openjdk-devel
+BuildRequires:  java-21-openjdk-devel
 BuildRequires:  maven
 
-Requires:       java-11-openjdk
+Requires:       java-21-openjdk
 
 %description
 The OSCAL CLI tool enables command-line processing, transformation,
