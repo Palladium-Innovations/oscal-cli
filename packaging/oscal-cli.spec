@@ -20,14 +20,7 @@ Supports formats like XML, JSON, and YAML, and works with SSPs, catalogs, profil
 assessment plans, and more.
 
 %prep
-# TEMP DEBUGGING: inspect contents of source tarball
-mkdir temp-extract && cd temp-extract
-tar -tzf %{SOURCE0} > ../contents.txt
-cd ..
-cat contents.txt
-
-# Now try normal setup (expected to fail, that’s okay)
-%setup -q -n cli-core-1.0.3-oscal-cli
+%setup -q -n oscal-cli
 
 %build
 mvn clean install -Dgit.commit.id.skip=true
