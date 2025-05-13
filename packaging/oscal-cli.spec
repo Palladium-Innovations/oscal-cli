@@ -20,7 +20,7 @@ Supports formats like XML, JSON, and YAML, and works with SSPs, catalogs, profil
 assessment plans, and more.
 
 %prep
-%setup -q
+%setup -q -n cli-core-1.0.3-oscal-cli
 
 %build
 mvn clean install -Dgit.commit.id.skip=true
