@@ -6,21 +6,19 @@ on:
 jobs:
   rpm:
     runs-on: ubuntu-latest
+    container:
+      image: fedora:latest
+
     steps:
+      - name: Install dependencies
+        run: |
+          dnf install -y java-11-openjdk-devel maven rpm-build
+
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 11
-
       - name: Build project with Maven
         run: mvn clean install
-
-      - name: Install rpmbuild
-        run: sudo apt-get update && sudo apt-get install -y rpm
 
       - name: Create RPM build structure
         run: |
