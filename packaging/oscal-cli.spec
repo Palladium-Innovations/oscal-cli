@@ -23,7 +23,7 @@ assessment plans, and more.
 %setup -q
 
 %build
-mvn clean install
+mvn clean install -Dgit.commit.id.skip=true
 
 %install
 mkdir -p %{buildroot}/opt/%{name}
